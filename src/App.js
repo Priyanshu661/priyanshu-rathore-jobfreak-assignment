@@ -1,30 +1,37 @@
-import {
-  ChannelDetails,
-  Feed,
-  SearchFeed,
-  Sidebar,
-  VideoDetails,
-} from "./pages/index";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { red } from "@mui/material/colors";
-import Stack from "@mui/material/Stack";
-import LinearProgress from "@mui/material/LinearProgress";
-import { createTheme } from "@mui/material/styles";
-import { useSelector } from "react-redux";
+import React, { useState } from "react";
+import ReactDOM from "react-dom/client";
+import "./App.css"
+
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Home from "./components/Home";
+import Contact from "./components/Contact";
+import Guide from "./components/Guide";
+import Information from "./components/Information";
+import Navbar from "./components/Navbar";
+
 
 function App() {
+const [activeComponent, setActiveComponent] = useState("home");
+
+  
   return (
-    <Router>
-      <Sidebar />
-      <Routes>
-        <Route path="/" element={<Feed />} />
-        <Route path="/feed/:id" element={<Feed />} />
-        <Route path="/channel/:id" element={<ChannelDetails />} />
-        <Route path="/search/:id" element={<SearchFeed />} />
-        <Route path="/watch/:id" element={<VideoDetails />} />
-      </Routes>
-    </Router>
+<BrowserRouter>
+ <div className="App">
+ <Navbar/>
+    <Routes>
+
+  <Route path="/" element={<Home/>}/>
+  <Route path="/contact" element={<Contact/>}/>
+  <Route path="/guide" element={<Guide/>}/>
+  <Route path="/information" element={<Information/>}/>
+</Routes>  
+    </div>
+
+
+</BrowserRouter>
+    
   );
 }
+
 
 export default App;

@@ -1,0 +1,47 @@
+
+.App {
+    display: flex;
+   
+}
+
+.left-panel {
+    width: 200px;
+    height: 100vh;
+    background-color: black;
+    color:white;
+    
+}
+
+.links {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+  
+}
+
+
+
+a {
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 20px;
+}
+a:active {
+    font-weight: bold;
+    background-color: darkgray;
+}
+
+
+.active{
+font-weight: bold;
+background-color: darkgray;
+}
+
+.content-area {
+    flex: 1;
+    padding: 20px;
+}
